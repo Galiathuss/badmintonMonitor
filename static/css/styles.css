@@ -66,15 +66,7 @@ button:hover {
 
 /* 媒体查询 */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
 
-    .header img {
-        margin-bottom: 10px; /* 增加底部间距，避免太挤 */
-    }
 
     .day {
         padding: 8px;

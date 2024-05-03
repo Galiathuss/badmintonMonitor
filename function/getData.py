@@ -53,7 +53,7 @@ async def get_data_likedong(url):
             # 同时根据活动时间获取days中符合格式的keyname, 例如"5月4日 周六"
             temp['days_key_name'] = get_days_key_name(temp['start_time'])
             # 生成活动时间段
-            temp['time_range'] = temp['start_time'].split(" ")[1] + "-" + temp['end_time'].split(" ")[1]
+            temp['time_range'] = (temp['start_time'].split(" ")[1] + "-" + temp['end_time'].split(" ")[1]).replace("00:00","00")
             # 获取活动地点
             temp['venue_name'] = item.get("venue_name", "")
             # 最多参与人数
@@ -106,7 +106,7 @@ async def get_data_shandong(url,club):
             # 同时根据活动时间获取days中符合格式的keyname, 例如"5月4日 周六"
             temp['days_key_name'] = get_days_key_name(temp['start_time'])
             # 生成活动时间段
-            temp['time_range'] = temp['start_time'].split(" ")[1] + "-" + temp['end_time'].split(" ")[1]
+            temp['time_range'] = (temp['start_time'].split(" ")[1] + "-" + temp['end_time'].split(" ")[1]).replace("00:00","00")
             # 获取活动地点
             temp['venue_name'] = item.get("activityAddress", "")
             # 最多参与人数

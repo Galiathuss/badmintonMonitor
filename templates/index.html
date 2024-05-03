@@ -20,12 +20,12 @@
                         <img src="{{ event.platformIconUrl }}" alt="User Icon" width="50" height="50">
                         <div>
                             <h3>{{ event.title }}</h3>
-                            <div>地点: {{ event.venue_name }}</div>
-                            <div>已报名 {{ event.current_participants }}/{{ event.max_participants }}人</div>
+                            <div>地点: {{ event.venue_name }} | 已报名 {{ event.current_participants }}/{{ event.max_participants }}人</div>
+                            <!-- <div>已报名 {{ event.current_participants }}/{{ event.max_participants }}人</div> -->
                         </div>
                     </div>
                     <p class="time">时间：{{ event.time_range }}  | 发起人: {{event.organizer}} </p>
-                    <button onclick="alert('详情');">查看详情</button>
+                    <button onclick="alert('请手动打开小程序,直接跳转功能有点复杂- -');">查看详情</button>
                 </div>
                 {% endfor %}
             </div>
