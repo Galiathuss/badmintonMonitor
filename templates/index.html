@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>活动列表</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        {% for day, events in days.items() %}
+        <div class="day">
+            <h2 onclick="toggleEvents(this)"> <!-- 添加 onclick 事件 -->
+                {{ day }}
+            </h2>
+            <div class="events" style="display: block;"> <!-- 添加一个新的类和默认显示 -->
+                {% for event in events %}
+                <div class="event">
+                    <div class="header">
+                        <img src="{{ event.platformIconUrl }}" alt="User Icon" width="50" height="50">
+                        <div>
+                            <h3>{{ event.title }}</h3>
+                            <div>地点: {{ event.venue_name }}</div>
+                            <div>已报名 {{ event.current_participants }}/{{ event.max_participants }}人</div>
+                        </div>
+                    </div>
+                    <p class="time">时间：{{ event.time_range }}  | 发起人: {{event.organizer}} </p>
+                    <button onclick="alert('详情');">查看详情</button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
