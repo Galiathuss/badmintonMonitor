@@ -1,5 +1,6 @@
 import asyncio,time
 from function.getData import get_data
+from config import settings
 
 if __name__ == "__main__":
     while True:
@@ -9,4 +10,4 @@ if __name__ == "__main__":
         # 打印结束时间2021-05-04 00:00:00
         print("结束时间" + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
         # 休眠30分钟,这里需要使用协程的方式进行休眠
-        asyncio.run(asyncio.sleep(30 * 60))
+        asyncio.run(asyncio.sleep(settings.sleep_time))
