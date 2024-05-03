@@ -41,8 +41,9 @@ body {
     margin-right: 10px;
 }
 
-.header h3, .header span {
+.header h3, .header div {
     margin: 0;
+    margin-bottom: 5px; /* 小间距增加清晰度 */
 }
 
 .time {
@@ -56,8 +57,38 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    width: 100%; /* 适合移动设备 */
 }
 
 button:hover {
     background-color: #45a049;
+}
+
+/* 媒体查询 */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header img {
+        margin-bottom: 10px; /* 增加底部间距，避免太挤 */
+    }
+
+    .day {
+        padding: 8px;
+    }
+
+    .event {
+        padding: 15px;
+    }
+
+    body {
+        padding: 10px; /* 减少边距 */
+    }
+
+    .container {
+        gap: 10px; /* 缩小间距 */
+    }
 }
