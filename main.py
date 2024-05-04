@@ -6,7 +6,8 @@ import json, asyncio,uvicorn
 from function.getData import get_data
 
 app = FastAPI(
-    debug=False
+    debug=False,
+    docs_url=None,
 )
 
 # 设置静态文件目录
