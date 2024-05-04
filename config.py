@@ -45,4 +45,4 @@ class settings:
         'likedong': 'https://api.like-sports.cn:8008/api-c/activities/clubActivities?clubId={}&pageNum=1',
         'shandong': 'https://www.shuote.top:8082/flash/activity/filterList?type=1&id={}&pageSize=10&pageNo=1&sportId=0'
     }
-    sleep_time = 30 * 60
+    sleep_time = 15 * 60
