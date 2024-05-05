@@ -11,6 +11,12 @@ body {
     gap: 20px;
 }
 
+.toggle-text {
+    color: gray; /* 灰色文字 */
+    font-size: 14px; /* 文字大小 */
+    margin-left: 10px; /* 左边距 */
+}
+
 .day {
     background-color: #ffebee;
     border-radius: 8px;

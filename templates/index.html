@@ -12,6 +12,7 @@
         <div class="day">
             <h2 onclick="toggleEvents(this)"> <!-- 添加 onclick 事件 -->
                 {{ day }}
+                <span class="toggle-text">点击收起</span>
             </h2>
             <div class="events" style="display: block;"> <!-- 添加一个新的类和默认显示 -->
                 {% for event in events %}
@@ -25,7 +26,7 @@
                         </div>
                     </div>
                     <p class="time">时间：{{ event.time_range }}  | 发起人: {{event.organizer}} </p>
-                    <button onclick="window.location='{{ event.jumpLink }}';;">查看详情</button>
+                    <!-- <button onclick="window.location='{{ event.jumpLink }}';;">查看详情</button> -->
                 </div>
                 {% endfor %}
             </div>

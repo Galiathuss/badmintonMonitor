@@ -12,7 +12,9 @@ function toggleEvents(element) {
     // 切换显示状态
     if (eventsDiv.style.display === "none") {
         eventsDiv.style.display = "block";
+        element.querySelector('.toggle-text').innerText = '点击收起';
     } else {
         eventsDiv.style.display = "none";
+        element.querySelector('.toggle-text').innerText = '点击展开';
     }
 }
