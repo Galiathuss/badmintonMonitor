@@ -1,4 +1,4 @@
-import asyncio,httpx,json
+import asyncio,httpx,json,traceback
 from config import settings
 from datetime import datetime, timedelta
 
@@ -24,7 +24,7 @@ def get_days_key_name(date_string):
 
     return result
 
-async def get_data_likedong(url):
+async def get_data_likedong(url,platform):
     # 用httpx进行异步请求
     ret_data = []
     async with httpx.AsyncClient() as client:
@@ -64,6 +64,8 @@ async def get_data_likedong(url):
             temp['organizer'] = item.get("contact_name", "")
             # 当前平台
             temp['platformIconUrl'] = "static/icon/likedong.png"
+            # 跳转链接
+            temp['jumpLink'] = platform['JumpLink']
 
             ret_data.append(temp)
     return {
@@ -72,7 +74,7 @@ async def get_data_likedong(url):
     }
         
         
-async def get_data_shandong(url,club):
+async def get_data_shandong(url,club,platform):
     # 用httpx进行异步请求
     ret_data = []
     async with httpx.AsyncClient() as client:
@@ -117,6 +119,8 @@ async def get_data_shandong(url,club):
             temp['organizer'] = item.get("organizerName", "")
             # 当前平台
             temp['platformIconUrl'] = "static/icon/shandong.png"
+            # 跳转链接
+            temp['jumpLink'] = platform['JumpLink']
 
             ret_data.append(temp)
     return {
@@ -142,11 +146,11 @@ async def get_data():
             try:
                 # 对当前平台进行异步请求
                 if platform["PlatformName"] == "likedong":
-                    data = await get_data_likedong(url)
+                    data = await get_data_likedong(url,platform)
                 elif platform["PlatformName"] == "shandong":
-                    data = await get_data_shandong(url,club)
+                    data = await get_data_shandong(url,club,platform)
             except:
-                print("请求失败")
+                print(f"请求失败,{traceback.format_exc()}")
                 # 构造一个失败的data
                 data = {
                     "status": False,

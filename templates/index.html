@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <p class="time">时间：{{ event.time_range }}  | 发起人: {{event.organizer}} </p>
-                    <button onclick="alert('请手动打开小程序,直接跳转功能有点复杂- -');">查看详情</button>
+                    <button onclick="window.location='{{ event.jumpLink }}';;">查看详情</button>
                 </div>
                 {% endfor %}
             </div>

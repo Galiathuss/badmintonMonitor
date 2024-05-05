@@ -5,11 +5,13 @@ class settings:
             "ClubPlatform": [
                 {
                     "PlatformName": "likedong",
-                    "ClubID": 342
+                    "ClubID": 342,
+                    "JumpLink":"#小程序://栎刻动体育/9hL2l0xAzJrSJWf"
                 },
                 {
                     "PlatformName": "shandong",
-                    "ClubID": 9000
+                    "ClubID": 9000,
+                    "JumpLink":"#小程序://栎刻动体育/9hL2l0xAzJrSJWf"
                 }
             ]
         },
@@ -18,7 +20,8 @@ class settings:
             "ClubPlatform": [
                 {
                     "PlatformName": "likedong",
-                    "ClubID": 361
+                    "ClubID": 361,
+                    "JumpLink":"#小程序://栎刻动体育/9hL2l0xAzJrSJWf"
                 }
             ]
         },
@@ -27,7 +30,8 @@ class settings:
             "ClubPlatform": [
                 {
                     "PlatformName": "shandong",
-                    "ClubID": 7484
+                    "ClubID": 7484,
+                    "JumpLink":"#小程序://栎刻动体育/9hL2l0xAzJrSJWf"
                 }
             ]
         },
@@ -36,11 +40,13 @@ class settings:
             "ClubPlatform": [
                 {
                     "PlatformName": "shandong",
-                    "ClubID": 7784
+                    "ClubID": 7784,
+                    "JumpLink":"#小程序://栎刻动体育/9hL2l0xAzJrSJWf"
                 },
                 {
                     "PlatformName": "likedong",
-                    "ClubID": 576
+                    "ClubID": 576,
+                    "JumpLink":"#小程序://栎刻动体育/9hL2l0xAzJrSJWf"
                 },
             ]
         },
