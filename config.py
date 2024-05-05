@@ -6,6 +6,10 @@ class settings:
                 {
                     "PlatformName": "likedong",
                     "ClubID": 342
+                },
+                {
+                    "PlatformName": "shandong",
+                    "ClubID": 9000
                 }
             ]
         },
