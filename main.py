@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-import json, asyncio,uvicorn
+import json, asyncio,uvicorn,time
 from function.getData import get_data
 
 app = FastAPI(
@@ -23,7 +23,8 @@ async def read_index(request: Request):
     with open("data/days.json", "r",encoding='utf-8') as f:
         data = f.read()
     days = json.loads(data)
-    return templates.TemplateResponse("index.html", {"request": request, "days": days})
+    timestamp = int(time.time())
+    return templates.TemplateResponse("index.html", {"request": request, "days": days, "timestamp": timestamp})
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=8133,reload=False,)
