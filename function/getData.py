@@ -139,11 +139,20 @@ async def get_data():
             url = settings.UrlInfo[platform["PlatformName"]].format(platform["ClubID"])
             print(f"开始检索{club['ClubName']},平台{platform['PlatformName']}")
             print(f"请求地址: {url}")
-            # 对当前平台进行异步请求
-            if platform["PlatformName"] == "likedong":
-                data = await get_data_likedong(url)
-            elif platform["PlatformName"] == "shandong":
-                data = await get_data_shandong(url,club)
+            try:
+                # 对当前平台进行异步请求
+                if platform["PlatformName"] == "likedong":
+                    data = await get_data_likedong(url)
+                elif platform["PlatformName"] == "shandong":
+                    data = await get_data_shandong(url,club)
+            except:
+                print("请求失败")
+                # 构造一个失败的data
+                data = {
+                    "status": False,
+                    "message": "请求失败"
+                }
+                continue
             if not data["status"]:
                 print("获取数据失败: ", data)
                 continue
