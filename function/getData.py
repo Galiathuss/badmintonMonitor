@@ -133,8 +133,8 @@ async def get_data_shandong(url,club,platform):
 
 async def get_data():
     days = {}
-    # days 进行初始化,插入当前日期往后的5天,并且以"5月4日 周六"为key
-    for i in range(5):
+    # days 进行初始化,插入当前日期往后的n天,并且以"5月4日 周六"为key
+    for i in range(settings.view_days):
         date = datetime.now().date() + timedelta(days=i)
         key_name = get_days_key_name(date.strftime("%Y-%m-%d %H:%M:%S"))
         days[key_name] = []

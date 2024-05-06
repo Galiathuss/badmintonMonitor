@@ -56,3 +56,4 @@ class settings:
         'shandong': 'https://www.shuote.top:8082/flash/activity/filterList?type=1&id={}&pageSize=10&pageNo=1&sportId=0'
     }
     sleep_time = 15 * 60
+    view_days = 7 # 展示7天的数据
