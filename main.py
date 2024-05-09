@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-import json, asyncio,uvicorn,time
+import json,uvicorn,time
 from function.getData import get_data
 from pydantic import BaseModel
 
@@ -17,19 +17,9 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 # 设置模板目录
 templates = Jinja2Templates(directory="templates")
 
-class Item(BaseModel):
-    ts: float
-
-@app.post("/testdelay")
-async def testdelay(item: Item):
-    # 这里可以添加处理接收到的数据的逻辑
-    ts_now = time.time() * 1000
-    delay = ts_now - item.ts
-    return {
-        "delay": delay,
-        "ts_now": ts_now,
-        "ts": item.ts
-    }
+@app.get("/testdelay")
+async def testdelay(request: Request):
+    return None
 
 @app.get("/", response_class=HTMLResponse)
 async def read_index(request: Request):
