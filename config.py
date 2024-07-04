@@ -50,10 +50,30 @@ class settings:
                 },
             ]
         },
+        {
+            "ClubName": "全明星",
+            "ClubPlatform": [
+                {
+                    "PlatformName": "shandong",
+                    "ClubID": 10987,
+                    "JumpLink":"#小程序://栎刻动体育/9hL2l0xAzJrSJWf"
+                },
+            ]
+        },
+        {
+            "ClubName": "飞羽",
+            "ClubPlatform": [
+                {
+                    "PlatformName": "shandong",
+                    "ClubID": 10192,
+                    "JumpLink":"#小程序://栎刻动体育/9hL2l0xAzJrSJWf"
+                },
+            ]
+        },
     ]
     UrlInfo = {
         'likedong': 'https://api.like-sports.cn:8008/api-c/activities/clubActivities?clubId={}&pageNum=1',
         'shandong': 'https://www.shuote.top:8082/flash/activity/filterList?type=1&id={}&pageSize=10&pageNo=1&sportId=0'
     }
-    sleep_time = 15 * 60
+    sleep_time = 5 * 60
     view_days = 7 # 展示7天的数据
